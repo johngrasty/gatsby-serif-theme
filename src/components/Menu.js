@@ -11,6 +11,7 @@ const Menu = props => {
             {link.name}
           </Link>
         ))}
+        <span />
       </div>
     </div>
   );

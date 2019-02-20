@@ -2,11 +2,31 @@
 
 @import "../../node_modules/bulma/sass/utilities/initial-variables";
 
+$footer-padding: 1.5rem 1.5rem 1.5rem;
+$footer-background-color: $grey-dark;
+$navbar-item-img-max-height: 3.5rem;
+$navbar-item-img-padding: 0.1rem 0.75rem;
+$strong-color: "";
+
+$blue: #365e7e;
+
 @import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma-helpers/css/bulma-helpers.min.css";
+
+.navbar-end {
+  margin-right: 3rem;
+}
+
+.hamburger {
+  border: none;
+}
+
+.logo.navbar-item {
+  padding: $navbar-item-img-padding;
+}
 
 // Font
 //@import url("https://fonts.googleapis.com/css?family=Lora:400|Open+Sans:400,700");
-
 // Bootstrap
 // @import "bootstrap/functions";
 // @import "bootstrap-variables";
@@ -17,7 +37,6 @@
 // @import "bootstrap/grid";
 // @import "bootstrap/type";
 // @import "bootstrap/tables";
-
 // @import "bootstrap/images";
 // @import "bootstrap/code";
 // @import "bootstrap/forms";
@@ -44,9 +63,7 @@
 // @import "bootstrap/popover";
 // @import "bootstrap/carousel";
 // @import "bootstrap/print";
-
 // @import "bootstrap/utilities";
-
 // Libraries
 @import "libraries/hamburgers/hamburgers";
 

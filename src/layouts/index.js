@@ -18,7 +18,7 @@ const Layout = props => {
           {props.children}
         </div>
         <Footer />
-        <SubFooter />
+        {/* <SubFooter /> */}
       </div>
     </React.Fragment>
   );

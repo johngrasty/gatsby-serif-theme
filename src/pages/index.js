@@ -1,11 +1,13 @@
-import React from 'react';
-import { graphql, withPrefix, Link } from 'gatsby';
-import Helmet from 'react-helmet';
-import SEO from '../components/SEO';
-import Layout from '../layouts/index';
-import Call from '../components/Call';
+import React from "react";
+import { graphql, withPrefix, Link } from "gatsby";
+import Helmet from "react-helmet";
+import SEO from "../components/SEO";
+import Layout from "../layouts/index";
+import Call from "../components/Call";
+import StyledBackgroundHero from "../components/BackgroundHero";
+import StyledBackgroundSection from "../components/StyledBackgroundSection";
 
-const Home = (props) => {
+const Home = props => {
   const markdown = props.data.allMarkdownRemark.edges;
   const json = props.data.allFeaturesJson.edges;
   return (
@@ -17,15 +19,16 @@ const Home = (props) => {
           content="Small Business Theme. Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This is a beautiful and artfully designed starting theme."
         />
       </Helmet>
-      <div className="intro pb-4">
-        <div className="container">
+      <StyledBackgroundSection className="hero is-fullheight-with-navbar">
+        <div className="hero-body has-text-white">
           <h1>Serif - Gatsby Small Business Theme.</h1>
           <p>
-            Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This
-            is a beautiful and artfully designed starting theme.
+            Multiple content types using Markdown and JSON sources. Responsive
+            design and SCSS. This is a beautiful and artfully designed starting
+            theme.
           </p>
         </div>
-      </div>
+      </StyledBackgroundSection>
 
       <div className="container pt-2">
         <Call button />
@@ -37,11 +40,16 @@ const Home = (props) => {
             <h2 className="title-3 text-dark mb-3">Our Services</h2>
           </div>
           {markdown.map(edge => (
-            <div key={edge.node.frontmatter.path} className="col-12 col-md-4 mb-1">
+            <div
+              key={edge.node.frontmatter.path}
+              className="col-12 col-md-4 mb-1"
+            >
               <div className="card service service-teaser">
                 <div className="card-content">
                   <h2>
-                    <Link to={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</Link>
+                    <Link to={edge.node.frontmatter.path}>
+                      {edge.node.frontmatter.title}
+                    </Link>
                   </h2>
                   <p>{edge.node.excerpt}</p>
                 </div>
